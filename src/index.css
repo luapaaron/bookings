@@ -1,0 +1,26 @@
+@import './assets/fonts/index.css';
+
+html,
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  pointer-events: none;
+}
