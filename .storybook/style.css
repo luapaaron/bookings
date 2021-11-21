@@ -1,0 +1,45 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
+input,
+button,
+p {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:not(code),
+*:focus(:not(code)) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rating > label:before {
+  font-family: FontAwesome, sans-serif;
+  content: '\f005';
+}

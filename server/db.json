@@ -1,0 +1,273 @@
+{
+  "bookings": [
+    {
+      "id": 0,
+      "room_id": 1,
+      "room_name": "101",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "John Doe",
+        "Bob Smith",
+        "Mike Smith"
+      ],
+      "date_time": 1637377200,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 2,
+      "room_id": 2,
+      "room_name": "102",
+      "host_name": "Harmako Jules",
+      "guests_name": [
+        "Juan Carlos II",
+        "Jane Smith II",
+        "Mike Jones II",
+        "David Smith II"
+      ],
+      "date_time": 1646679600,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 3,
+      "room_id": 5,
+      "room_name": "105",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1646679600,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 4,
+      "room_id": 7,
+      "room_name": "107",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1649358000,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 6,
+      "room_id": 10,
+      "room_name": "201",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1657220400,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 7,
+      "room_id": 14,
+      "room_name": "205",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1657220400,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 8,
+      "room_id": 16,
+      "room_name": "207",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1651950000,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 9,
+      "room_id": 17,
+      "room_name": "208",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1651950000,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 10,
+      "room_id": 3,
+      "room_name": "103",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1637377200,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    },
+    {
+      "id": 11,
+      "room_id": 1,
+      "room_name": "101",
+      "host_name": "Aaron Paul Labing-isa",
+      "guests_name": [
+        "Juan Carlos",
+        "Jane Smith",
+        "Mike Jones",
+        "David Smith"
+      ],
+      "date_time": 1637377200,
+      "interval": 30,
+      "date_created": 1637377200,
+      "date_updated": 1637377200
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "101",
+      "floor": 1,
+      "image": "/assets/room1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "102",
+      "floor": 1,
+      "image": "/assets/room2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "103",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "104",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "105",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "106",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "107",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "108",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "109",
+      "floor": 1,
+      "image": ""
+    },
+    {
+      "id": 10,
+      "name": "201",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 11,
+      "name": "202",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 12,
+      "name": "203",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 13,
+      "name": "204",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 14,
+      "name": "205",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 15,
+      "name": "206",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 16,
+      "name": "207",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 17,
+      "name": "208",
+      "floor": 2,
+      "image": ""
+    },
+    {
+      "id": 18,
+      "name": "209",
+      "floor": 2,
+      "image": ""
+    }
+  ]
+}

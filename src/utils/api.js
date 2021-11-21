@@ -2,7 +2,7 @@ import { request } from 'axios';
 
 import config from '@constants/serverConfig';
 
-export const api = (options = {}) => {
+const api = (options = {}) => {
   const finalOptions = {
     baseURL: config.SERVER_BASE_URL,
     ...options,
@@ -13,3 +13,5 @@ export const api = (options = {}) => {
 
   return request({ ...finalOptions });
 };
+
+export default api;
