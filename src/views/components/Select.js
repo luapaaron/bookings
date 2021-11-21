@@ -147,7 +147,7 @@ const OptionsContainer = styled('div')(
     'top': ContainerHeight + 2,
     'minWidth': '100%',
     'backgroundColor': theme.white,
-    'zIndex': 1,
+    'zIndex': 999,
     'borderRadius': 4,
     'overflowY': 'auto',
     'boxShadow': `0px -1px 5px 0px ${theme.HeaderBoxShadowColor}`,

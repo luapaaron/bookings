@@ -7,6 +7,7 @@ import Scrollbars from '@layouts/Scrollbars';
 const Header = lazy(() => import('@layouts/Header'));
 const Home = lazy(() => import('@containers/home'));
 const BookingDetails = lazy(() => import('@containers/bookingDetail'));
+const Book = lazy(() => import('@containers/book'));
 const Calendar = lazy(() => import('@layouts/Calendar'));
 
 const ViewRootContainer = styled('div')(({ theme }) => ({
@@ -24,6 +25,7 @@ const ViewRoot = () => (
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/view/:id' element={<BookingDetails />} />
+          <Route path='/book' element={<Book />} />
         </Routes>
       </Router>
     </Scrollbars>

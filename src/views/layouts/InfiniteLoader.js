@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from '@utils/isEmpty';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -47,35 +48,37 @@ const InfiniteLoader = ({
   useWindow,
   ...props
 }) => {
-  const calculateTopPosition = (el) => (el ? el.offsetTop + calculateTopPosition(el.offsetParent) : 0);
+  const calculateTopPosition = (el) => (el ? el?.offsetTop + calculateTopPosition(el?.offsetParent) : 0);
   const scrollListener = () => {
     const el = scrollComponent;
     const scrollEl = window;
 
     let offset;
-    if (useWindow) {
-      const doc = document.documentElement || document.body.parentNode || document.body;
-      const scrollTop = scrollEl?.pageYOffset !== undefined
-        ? scrollEl?.pageYOffset
-        : doc.scrollTop;
-      if (isReverse) {
-        offset = scrollTop;
+    if (!isEmpty(el)) {
+      if (useWindow) {
+        const doc = document.documentElement || document.body.parentNode || document.body;
+        const scrollTop = scrollEl?.pageYOffset !== undefined
+          ? scrollEl?.pageYOffset
+          : doc.scrollTop;
+        if (isReverse) {
+          offset = scrollTop;
+        } else {
+          offset = calculateTopPosition(el) +
+            (el?.offsetHeight - scrollTop - window.innerHeight);
+        }
+      } else if (isReverse) {
+        offset = el?.parentNode.scrollTop;
       } else {
-        offset = calculateTopPosition(el) +
-                    (el.offsetHeight - scrollTop - window.innerHeight);
+        offset = el?.scrollHeight - el?.parentNode.scrollTop - el?.parentNode.clientHeight;
       }
-    } else if (isReverse) {
-      offset = el.parentNode.scrollTop;
-    } else {
-      offset = el.scrollHeight - el.parentNode.scrollTop - el.parentNode.clientHeight;
-    }
 
-    if (offset < Number(threshold)) {
-      // eslint-disable-next-line no-use-before-define
-      detachScrollListener();
-      // Call loadMore after detachScrollListener to allow for non-async loadMore functions
-      if (typeof loadMore === 'function') {
-        loadMore((pageLoaded += 1));
+      if (offset < Number(threshold)) {
+        // eslint-disable-next-line no-use-before-define
+        detachScrollListener();
+        // Call loadMore after detachScrollListener to allow for non-async loadMore functions
+        if (typeof loadMore === 'function') {
+          loadMore((pageLoaded += 1));
+        }
       }
     }
   };

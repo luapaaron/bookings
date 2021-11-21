@@ -2,7 +2,7 @@ import { SUCCESS, PENDING, ERROR, LOAD_MORE } from '@constants/actionStatus';
 import update from 'immutability-helper';
 import findIndex from 'lodash/findIndex';
 
-import { FETCH_BOOKINGS, DELETE_BOOKING } from './index';
+import { FETCH_BOOKINGS, DELETE_BOOKING, FETCH_DETAIL_BOOKING, FETCH_ROOM_DETAIL_BOOKINGS } from './index';
 
 const initialState = {
   list: [],
@@ -12,6 +12,12 @@ const initialState = {
 
   fetchMoreListPending: false,
   fetchMoreListError: false,
+
+  detail: {},
+  fetchDetailPending: false,
+  fetchDetailError: false,
+
+  roomBookings: [],
 };
 
 // Create reducer
@@ -57,6 +63,27 @@ const bookings = (state = initialState, action = {}) => {
       list: { $splice: [[i, 1]] },
     });
   }
+  case FETCH_DETAIL_BOOKING + PENDING:
+    return update(state, {
+      detail: { $set: {} },
+      fetchDetailPending: { $set: true },
+      fetchDetailError: { $set: false },
+    });
+  case FETCH_DETAIL_BOOKING + SUCCESS:
+    return update(state, {
+      detail: { $set: action.payload.data },
+      fetchDetailPending: { $set: false },
+      fetchDetailError: { $set: false },
+    });
+  case FETCH_DETAIL_BOOKING + ERROR:
+    return update(state, {
+      fetchDetailPending: { $set: false },
+      fetchDetailError: { $set: true },
+    });
+  case FETCH_ROOM_DETAIL_BOOKINGS + SUCCESS:
+    return update(state, {
+      roomBookings: { $set: action.payload.data },
+    });
   default:
     return { ...state };
   }

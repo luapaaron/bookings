@@ -35,6 +35,10 @@ const HomeContainer = styled('div')(mq({
   flexDirection: 'column',
   marginTop: 30,
 }));
+const HomeHeaderContainer = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
 
 const FilterContainer = styled('div')({
   marginTop: 20,
@@ -211,7 +215,10 @@ const Home = ({
       hasMore={hasMore}
     >
       <HomeContainer>
-        <Text fontSize={18} bold>Booking List</Text>
+        <HomeHeaderContainer>
+          <Text fontSize={18} bold>Booking List</Text>
+          <Link to='/book'><FillButton>Book a room</FillButton></Link>
+        </HomeHeaderContainer>
         <FilterContainer>
           <Input maxWidth={400} placeholder='Search Room' preIcon={{ icon: <SvgIcon src={searchSVG} /> }} onKeyDown={searchOnKeyDown} />
           <FilterGroupContainer>
@@ -306,7 +313,7 @@ const Home = ({
                       </DetailsGroup>
                       <DetailsGroup>
                         <Text bold>Time: </Text>
-                        <Text>{!isEmpty(booking.date_time) && `${dateFormat(booking.date_time, 'hh:mm A')} - ${dateFormat(booking.date_time + (booking.interval * 60), 'hh:mm A')}`}</Text>
+                        <Text>{!isEmpty(booking.date_time) && `${dateFormat(booking.date_time, 'hh:mm A')} - ${dateFormat(parseInt(booking.date_time, 10) + (booking.interval * 60), 'hh:mm A')}`}</Text>
                       </DetailsGroup>
                     </BookingDetails>
                     <ViewFillButtonContainer>
