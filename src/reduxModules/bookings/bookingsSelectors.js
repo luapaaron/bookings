@@ -59,7 +59,7 @@ export const selectorRoomBookings = createSelector(roomBookings, (bookings) => {
     bookings.forEach((booking) => {
       const bookingDetails = {
         date: dateFormat(booking.date_time),
-        time: `${dateFormat(booking.date_time, 'hh:mm A')} - ${dateFormat(booking.date_time + (booking.interval * 60), 'hh:mm A')}`,
+        time: `${dateFormat(booking.date_time, 'hh:mm A')} - ${dateFormat(parseInt(booking.date_time, 10) + (booking.interval * 60), 'hh:mm A')}`,
         host: booking.host_name,
         guest: booking.guests_name,
       };
