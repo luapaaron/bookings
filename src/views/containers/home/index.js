@@ -40,20 +40,27 @@ const HomeHeaderContainer = styled('div')({
   justifyContent: 'space-between',
 });
 
-const FilterContainer = styled('div')({
+const FilterContainer = styled('div')(mq({
   marginTop: 20,
   display: 'flex',
+  flexDirection: ['column', 'row'],
   justifyContent: 'space-between',
-});
-const FilterGroupContainer = styled('div')({
+}));
+
+const FilterGroupContainer = styled('div')(mq({
   'display': 'flex',
   'alignItems': 'flex-end',
-  'marginInlineStart': 20,
+  'flexDirection': ['column', 'row'],
+  'marginInlineStart': [0, 20],
 
   '>*': {
-    marginInlineEnd: 10,
+    marginInlineEnd: [0, 10],
+    marginBottom: [10, 0],
   },
-});
+  '>*:first-of-type': {
+    marginTop: [10, 0],
+  },
+}));
 
 const BookingListContainer = styled('div')(({ noList }) => ({
   'display': noList ? 'block' : 'grid',
@@ -220,7 +227,7 @@ const Home = ({
           <Link to='/book'><FillButton>Book a room</FillButton></Link>
         </HomeHeaderContainer>
         <FilterContainer>
-          <Input maxWidth={400} placeholder='Search Room' preIcon={{ icon: <SvgIcon src={searchSVG} /> }} onKeyDown={searchOnKeyDown} />
+          <Input maxWidth={['auto', 400]} placeholder='Search Room' preIcon={{ icon: <SvgIcon src={searchSVG} /> }} onKeyDown={searchOnKeyDown} />
           <FilterGroupContainer>
             <Select
               placeholder='Filter by'
@@ -228,12 +235,12 @@ const Home = ({
               value={filterBy.value}
               valueText={filterBy.text}
               onChange={onChangeFilter}
-              width={200}
+              width={['100%', 200]}
             />
             {
               !isEmpty(filterBy.value) ?
                 filterBy.value === 'date_time' ?
-                  <Calendar width={200} value={filterDate} onChange={setFilterDate} />
+                  <Calendar width={['100%', 200]} value={filterDate} onChange={setFilterDate} />
                   : (
                     <Select
                       placeholder='Room'
@@ -241,7 +248,7 @@ const Home = ({
                       value={filterByRoom.value}
                       valueText={filterByRoom.text}
                       onChange={onChangeFilterByRoom}
-                      width={200}
+                      width={['100%', 200]}
                     />
                   )
                 : null
@@ -252,7 +259,7 @@ const Home = ({
               value={sortBy.value}
               valueText={sortBy.text}
               onChange={onChangeSort}
-              width={200}
+              width={['100%', 200]}
             />
             {
               !isEmpty(sortBy.value) ? (
@@ -262,7 +269,7 @@ const Home = ({
                   value={sortByValue.value}
                   valueText={sortByValue.text}
                   onChange={onChangeSortValue}
-                  width={200}
+                  width={['100%', 200]}
                 />
               )
                 : null
